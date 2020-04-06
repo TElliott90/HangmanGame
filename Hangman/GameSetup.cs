@@ -27,7 +27,9 @@ namespace Hangman
             List<string> EasyWords = new List<string> { "Bird", "Tree", "Wood", "Fire", "Tech" };
             List<string> MediumWords = new List<string> { "Wales", "Rugby", "Calling", "Content", "Website" };
             List<string> HardWords = new List<string> { "Halloween", "Technology", "Graduate", "Developer", "Incredible" };
-            List<string> RandomWords = File.ReadLines(@"C:\Users\elliott\Documents\TechAcademy\PracticeProjects\PostPresHangman_Practice\Hangman_Practice\bin\Debug\netcoreapp2.2\Text_List.txt").ToList();
+
+            
+            //List<string> RandomWords = File.ReadLines(@"\bin\Debug\netcoreapp3.1\Text_List.txt").ToList();
             var random = new Random();
 
             switch (difficultySelected)
@@ -53,6 +55,7 @@ namespace Hangman
                         AddingGuessToList(newWord);
                         break;
                     }
+                    /*
                 case "R":
                     {
                         int randomIndex = random.Next(RandomWords.Count);
@@ -60,6 +63,7 @@ namespace Hangman
                         AddingGuessToList(newWord);
                         break;
                     }
+                    */
                 default:
                     {
                         Console.WriteLine("Not a valid option");

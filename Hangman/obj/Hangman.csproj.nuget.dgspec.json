@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/thomaselliott/Documents/Programmming/DevWork/GitRepos/Hangman/Hangman/Hangman.csproj": {}
+    "/Users/thomaselliott/Documents/Programmming/DevWork/GitRepos/HangmanGame/HangmanGame/Hangman/Hangman.csproj": {}
   },
   "projects": {
-    "/Users/thomaselliott/Documents/Programmming/DevWork/GitRepos/Hangman/Hangman/Hangman.csproj": {
+    "/Users/thomaselliott/Documents/Programmming/DevWork/GitRepos/HangmanGame/HangmanGame/Hangman/Hangman.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/thomaselliott/Documents/Programmming/DevWork/GitRepos/Hangman/Hangman/Hangman.csproj",
+        "projectUniqueName": "/Users/thomaselliott/Documents/Programmming/DevWork/GitRepos/HangmanGame/HangmanGame/Hangman/Hangman.csproj",
         "projectName": "Hangman",
-        "projectPath": "/Users/thomaselliott/Documents/Programmming/DevWork/GitRepos/Hangman/Hangman/Hangman.csproj",
+        "projectPath": "/Users/thomaselliott/Documents/Programmming/DevWork/GitRepos/HangmanGame/HangmanGame/Hangman/Hangman.csproj",
         "packagesPath": "/Users/thomaselliott/.nuget/packages/",
-        "outputPath": "/Users/thomaselliott/Documents/Programmming/DevWork/GitRepos/Hangman/Hangman/obj/",
+        "outputPath": "/Users/thomaselliott/Documents/Programmming/DevWork/GitRepos/HangmanGame/HangmanGame/Hangman/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/thomaselliott/.config/NuGet/NuGet.Config"

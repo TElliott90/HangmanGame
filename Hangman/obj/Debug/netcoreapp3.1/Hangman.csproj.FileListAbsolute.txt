@@ -1,0 +1,12 @@
+/Users/thomaselliott/Documents/Programmming/DevWork/GitRepos/HangmanGame/HangmanGame/Hangman/bin/Debug/netcoreapp3.1/Hangman.deps.json
+/Users/thomaselliott/Documents/Programmming/DevWork/GitRepos/HangmanGame/HangmanGame/Hangman/bin/Debug/netcoreapp3.1/Hangman.runtimeconfig.json
+/Users/thomaselliott/Documents/Programmming/DevWork/GitRepos/HangmanGame/HangmanGame/Hangman/bin/Debug/netcoreapp3.1/Hangman.runtimeconfig.dev.json
+/Users/thomaselliott/Documents/Programmming/DevWork/GitRepos/HangmanGame/HangmanGame/Hangman/bin/Debug/netcoreapp3.1/Hangman.dll
+/Users/thomaselliott/Documents/Programmming/DevWork/GitRepos/HangmanGame/HangmanGame/Hangman/bin/Debug/netcoreapp3.1/Hangman.pdb
+/Users/thomaselliott/Documents/Programmming/DevWork/GitRepos/HangmanGame/HangmanGame/Hangman/obj/Debug/netcoreapp3.1/Hangman.csprojAssemblyReference.cache
+/Users/thomaselliott/Documents/Programmming/DevWork/GitRepos/HangmanGame/HangmanGame/Hangman/obj/Debug/netcoreapp3.1/Hangman.csproj.CoreCompileInputs.cache
+/Users/thomaselliott/Documents/Programmming/DevWork/GitRepos/HangmanGame/HangmanGame/Hangman/obj/Debug/netcoreapp3.1/Hangman.AssemblyInfoInputs.cache
+/Users/thomaselliott/Documents/Programmming/DevWork/GitRepos/HangmanGame/HangmanGame/Hangman/obj/Debug/netcoreapp3.1/Hangman.AssemblyInfo.cs
+/Users/thomaselliott/Documents/Programmming/DevWork/GitRepos/HangmanGame/HangmanGame/Hangman/obj/Debug/netcoreapp3.1/Hangman.dll
+/Users/thomaselliott/Documents/Programmming/DevWork/GitRepos/HangmanGame/HangmanGame/Hangman/obj/Debug/netcoreapp3.1/Hangman.pdb
+/Users/thomaselliott/Documents/Programmming/DevWork/GitRepos/HangmanGame/HangmanGame/Hangman/obj/Debug/netcoreapp3.1/Hangman.genruntimeconfig.cache
