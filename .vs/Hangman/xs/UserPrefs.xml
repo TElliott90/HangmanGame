@@ -1,10 +1,14 @@
 ﻿<Properties StartupConfiguration="{EFA9639E-E681-4FE0-87C6-58F6CC657F88}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="Hangman/GameSetup.cs">
     <Files>
-      <File FileName="Hangman/Program.cs" Line="15" Column="6" />
-      <File FileName="Hangman/NewGame.cs" Line="52" Column="5" />
-      <File FileName="Hangman/PersonDraw.cs" Line="1" Column="1" />
-      <File FileName="Hangman/GameSetup.cs" Line="30" Column="1" />
+      <File FileName="Hangman/GameSetup.cs" Line="29" Column="10" />
+      <File FileName="Hangman/UserInput.cs" />
+      <File FileName="Hangman/Word_Handler.cs" Line="8" Column="6" />
+      <File FileName="Hangman/WordGuess_Handler.cs" Line="6" Column="1" />
+      <File FileName="Hangman/PersonDraw.cs" Line="21" Column="37" />
+      <File FileName="Hangman/NewGame.cs" Line="8" Column="31" />
+      <File FileName="Hangman/Program.cs" Line="1" Column="1" />
+      <File FileName="Hangman/GameOutcomeDecider.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
