@@ -3,50 +3,59 @@ namespace Hangman
 {
     public class NewGame
     {
-        GameSetup game;
-
+        
         public void StartGame() {
 
-            Console.WriteLine("Want to play a game?");
+
+            var life_H      = new Life_Handler();
+            var gameOutcome = new GameOutcomeDecider();
+            var t_Handler   = new Text_Handler();
+            var word_H      = new Word_Handler();
+            var wGuess_H    = new WordGuess_Handler();
+            var userInput   = new Text_Handler();
+
+            var repeatGame = false;
+
+
+            userInput.ConsoleText("Want to play a game?");
 
             do
             {
                 Console.Clear();
-                game = new GameSetup();
-                PersonDraw hangMan = new PersonDraw();
 
-                Console.WriteLine("Select Difficulty: Easy (E), Medium (M), Hard (H) or Random (R)");
-                string difficultySelected = Console.ReadLine().ToUpper();
+                userInput.ConsoleText("Select Difficulty: Easy (E), Medium (M), Hard (H) or Random (R)");
+                string difficultySelected = userInput.UpperUserInput();
 
-                game.WordGenerator(difficultySelected);
+                word_H.WordGenerator(difficultySelected);
                 Console.Clear();
 
-                while (game.Lives != 0)
+                while (life_H.Lives != 0)
                 {
-                    hangMan.HangmanDraw(game.Lives);
+                    life_H.HangmanDraw(life_H.Lives);
+                    word_H.PrintingLetterOrUnderscoreToConsole();
 
-                    game.PrintingLetterOrUnderscoreToConsole();
 
-                    if (game.repeatGame == true)
+                    if (repeatGame == true)
                     {
                         break;
                     }
 
-                    Console.WriteLine();
-                    Console.WriteLine();
-                    game.PrintGuessedLetters();
-                    Console.WriteLine();
-                    Console.WriteLine("Guess the word:");
+
+                    t_Handler.BlankSpace();
+                    t_Handler.BlankSpace();
+                    wGuess_H.PrintGuessedLetters();
+                    t_Handler.BlankSpace();
+                    t_Handler.ConsoleText("Guess the word:");
 
                     string userGuess = Console.ReadLine();
 
-                    game.ConfirmingTypeofInput(userGuess);
+                    wGuess_H.ConfirmingTypeofInput(userGuess);
 
                     Console.Clear();
                 }
-                game.CheckIfUserPlaysAgain();
+                gameOutcome.CheckIfUserPlaysAgain();
             }
-            while (game.repeatGame == true);
+            while (repeatGame == true);
         }
     }
     

@@ -1,0 +1,130 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/thomaselliott/Documents/Programmming/DevWork/GitRepos/HangmanGame/HangmanGame/Hangman_Tests/Hangman_Tests.csproj": {}
+  },
+  "projects": {
+    "/Users/thomaselliott/Documents/Programmming/DevWork/GitRepos/HangmanGame/HangmanGame/Hangman/Hangman.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/thomaselliott/Documents/Programmming/DevWork/GitRepos/HangmanGame/HangmanGame/Hangman/Hangman.csproj",
+        "projectName": "Hangman",
+        "projectPath": "/Users/thomaselliott/Documents/Programmming/DevWork/GitRepos/HangmanGame/HangmanGame/Hangman/Hangman.csproj",
+        "packagesPath": "/Users/thomaselliott/.nuget/packages/",
+        "outputPath": "/Users/thomaselliott/Documents/Programmming/DevWork/GitRepos/HangmanGame/HangmanGame/Hangman/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/thomaselliott/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.200/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/thomaselliott/Documents/Programmming/DevWork/GitRepos/HangmanGame/HangmanGame/Hangman_Tests/Hangman_Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/thomaselliott/Documents/Programmming/DevWork/GitRepos/HangmanGame/HangmanGame/Hangman_Tests/Hangman_Tests.csproj",
+        "projectName": "Hangman_Tests",
+        "projectPath": "/Users/thomaselliott/Documents/Programmming/DevWork/GitRepos/HangmanGame/HangmanGame/Hangman_Tests/Hangman_Tests.csproj",
+        "packagesPath": "/Users/thomaselliott/.nuget/packages/",
+        "outputPath": "/Users/thomaselliott/Documents/Programmming/DevWork/GitRepos/HangmanGame/HangmanGame/Hangman_Tests/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/thomaselliott/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "/Users/thomaselliott/Documents/Programmming/DevWork/GitRepos/HangmanGame/HangmanGame/Hangman/Hangman.csproj": {
+                "projectPath": "/Users/thomaselliott/Documents/Programmming/DevWork/GitRepos/HangmanGame/HangmanGame/Hangman/Hangman.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "MSTest.TestAdapter": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.2.0, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.200/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

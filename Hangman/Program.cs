@@ -8,7 +8,6 @@ namespace Hangman
         static void Main(string[] args)
         {
             NewGame game = new NewGame();
-
             game.StartGame();
 
         }

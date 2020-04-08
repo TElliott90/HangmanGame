@@ -1,10 +1,27 @@
 ﻿using System;
 namespace Hangman
 {
-    public class UserInput
+    public class Text_Handler
     {
-        public UserInput()
+        
+        public void ConsoleText(string message)
         {
+            Console.WriteLine(message);
         }
+
+
+        public void BlankSpace()
+        {
+            Console.WriteLine();
+        }
+
+
+        public string UpperUserInput()
+        {
+            return Console.ReadLine().ToUpper();
+        }
+
+
+        
     }
 }
