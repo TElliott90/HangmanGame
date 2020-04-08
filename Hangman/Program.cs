@@ -9,7 +9,6 @@ namespace Hangman
         {
             NewGame game = new NewGame();
             game.StartGame();
-
         }
     }
 }

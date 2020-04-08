@@ -10,7 +10,7 @@ namespace Hangman
         }
 
 
-        public void BlankSpace()
+        public void BlankLine()
         {
             Console.WriteLine();
         }

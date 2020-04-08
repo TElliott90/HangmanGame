@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace Hangman
 {
@@ -8,28 +9,35 @@ namespace Hangman
 
         //----------------Guessing The Word -----------------------------------------------------------
 
-        public void ConfirmingTypeofInput(string userGuess, string newWord)
+        public bool WordOrLetterGuess(string userGuess, string newWord)
         {
-            if (userGuess.Length == 1)
+            try
             {
-                CheckingLetterGuess(userGuess);
+                if (userGuess.Length == 1)
+                {
+                    return true;
+                }
+                else if (userGuess.Count() == newWord.Count())
+                {
+                    return false;
+                }
             }
-            else if (userGuess.Count() == newWord.Count())
+            catch
             {
-                CheckingWordGuess(userGuess);
-            }
-            else
-            {
-                Console.WriteLine("Not a valid guess, please try again");
-            }
-            Console.WriteLine();
+                throw Exception;
+            };
+
         }
 
 
 
 
-        public void CheckingLetterGuess(string letter)
+        public void CheckingLetterGuess(string letter, List<char> newWordList)
         {
+
+            
+
+
             for (int i = 0; i < letter.Length; i++)
             {
                 //checking previous answer
@@ -58,19 +66,21 @@ namespace Hangman
         }
 
 
-        public void CheckingWordGuess(string word)
+        public bool CheckingWordGuess(string word,string newWord)
         {
             word = word.ToLower();
 
             if (newWord == word)
             {
-                GameWon();
+                return true;
             }
             else
             {
-                Lives = LoseALife(Lives);
+                return false;
             }
         }
+
+
 
         public void PrintGuessedLetters()
         {

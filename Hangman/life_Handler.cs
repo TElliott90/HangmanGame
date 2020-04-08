@@ -6,7 +6,6 @@ namespace Hangman
 {
     public class Life_Handler
     {
-        public int Lives = 6;
 
         public int LoseALife(int Lives)
         {

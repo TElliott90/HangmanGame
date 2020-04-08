@@ -18,16 +18,17 @@ namespace Hangman
 
 
 
-
+        // Letter check needed
         #region
-        public void WordGenerator(string difficultySelected)
+        public string WordGenerator(string difficultySelected)
         {
             List<string> EasyWords = new List<string> { "Bird", "Tree", "Wood", "Fire", "Tech" };
             List<string> MediumWords = new List<string> { "Wales", "Rugby", "Calling", "Content", "Website" };
             List<string> HardWords = new List<string> { "Halloween", "Technology", "Graduate", "Developer", "Incredible" };
-
             //List<string> RandomWords = File.ReadLines(@"\bin\Debug\netcoreapp3.1\Text_List.txt").ToList();
-            var random = new Random();
+
+            Random random = new Random();
+            string newWord = "default";
 
             switch (difficultySelected)
             {
@@ -35,62 +36,80 @@ namespace Hangman
                     {
                         int randomIndex = random.Next(EasyWords.Count);
                         newWord = EasyWords[randomIndex].ToLower();
-                        AddingGuessToList(newWord);
                         break;
                     }
                 case "M":
                     {
                         int randomIndex = random.Next(MediumWords.Count);
                         newWord = MediumWords[randomIndex].ToLower();
-                        AddingGuessToList(newWord);
                         break;
                     }
                 case "H":
                     {
                         int randomIndex = random.Next(HardWords.Count);
                         newWord = HardWords[randomIndex].ToLower();
-                        AddingGuessToList(newWord);
                         break;
                     }
-                /*
-            case "R":
-                {
-                    int randomIndex = random.Next(RandomWords.Count);
-                    newWord = RandomWords[randomIndex].ToLower();
-                    AddingGuessToList(newWord);
-                    break;
-                }
-                */
-                default:
+            }
+
+            return newWord;
+
+
+
+            /*
+        case "R":
+            {
+                int randomIndex = random.Next(RandomWords.Count);
+                newWord = RandomWords[randomIndex].ToLower();
+                AddingGuessToList(newWord);
+                return newWord;
+                break;
+            }
+            */
+
+            /* else
+
                     {
                         Console.WriteLine("Not a valid option");
                         break;
                     }
-            }
+            */
         }
+        
+        
         #endregion
 
 
 
         public List<char> AddingGuessToList(string newWord)
         {
-            List<char> wordToBeGuessed2 = new List<char>();
+            List<char> wordToBeGuessedList = new List<char>();
+
             for (int i = 0; i < newWord.Length; i++)
             {
-                wordToBeGuessed2.Add(newWord[i]);
+                wordToBeGuessedList.Add(newWord[i]);
             }
-            return wordToBeGuessed2;
+            return wordToBeGuessedList;
         }
 
 
 
         //Letter or Underscore
         #region
-        public void PrintingLetterOrUnderscoreToConsole()
+        public void PrintingLetterOrUnderscoreToConsole(List<char> wordToBeGuessedList)
         {
             Console.WriteLine();
 
-            string[] PrintedWordsOrUnderscores = new string[newWord.Length];
+           // List<char> wordtoGuess = new List<char>(wordToBeGuessedList);
+
+            foreach(char n in wordToBeGuessedList)
+            {
+                Console.WriteLine("_ ");
+            }
+
+
+
+            /* string[] PrintedWordsOrUnderscores = new string[newWord.Length];
 
             for (int i = 0; i < wordToBeGuessed2.Count(); i++)
             {
@@ -118,14 +137,20 @@ namespace Hangman
             {
                 Console.Write(PrintedWordsOrUnderscores[i]);
             }
+            */
 
-
-            if (!PrintedWordsOrUnderscores.Contains("_ "))
-            {
-                GameWon();
-            }
+            
         }
-            #endregion
-        
+        #endregion
+
+        public void LetterCompare(List<char> guessedWordList, List<char> wordToBeGuessedList)
+        {
+
+            
+            
+        }
+
+
+
     }
 }

@@ -6,12 +6,13 @@ namespace Hangman
 
         public bool GameWon()
         {
-            return repeatGame = true;
+            var repeatGame = true;
+            return repeatGame;
         }
 
 
-
-        public void GameOver()
+        // needs changing
+        public void GameOver(string newWord, bool repeatGame)
         {
             newWord = newWord.ToUpper();
             Life_Handler hangMan = new Life_Handler();
@@ -40,11 +41,11 @@ namespace Hangman
 
 
 
-        public void CheckIfUserPlaysAgain(int Lives)
+        public void CheckIfUserPlaysAgain(int Lives, string newWord)
         {
             if (Lives == 0)
             {
-                GameOver();
+                GameOver(newWord, false);
             }
 
             else
