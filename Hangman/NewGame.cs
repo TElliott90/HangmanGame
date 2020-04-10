@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 
 namespace Hangman
@@ -6,23 +7,34 @@ namespace Hangman
     public class NewGame
     {
 
-        
-        public void StartGame() {
+
+        public void StartGame()
+        {
 
             //should be taken out?
-            var life_H      = new Life_Handler();
+            var life_H = new Life_Handler();
             var gameOutcome = new GameOutcomeDecider();
-            var t_Handler   = new Text_Handler();
-            var word_H      = new Word_Handler();
-            var wGuess_H    = new WordGuess_Handler();
-            var userInput   = new Text_Handler();
+            var t_Handler = new Text_Handler();
+            var word_H = new Word_Generator();
+            var wGuess_H = new WordGuess_Handler();
+            
             //---------------------------------------------
 
+
+            #region Variables
             var repeatGame = false;
-            var Lives = 6;
+            var gameWon = false;
+            var Lives = 6; 
+            #endregion
+
+            #region Lists
+            List<char> userGuessedList = new List<char>();           
+            List<char> guessList       = new List<char>();
+            #endregion
 
 
-            userInput.ConsoleText("Want to play a game?");
+            t_Handler.ConsoleText("Want to play a game?");
+
 
             do
             {
@@ -30,24 +42,45 @@ namespace Hangman
 
                 //  Word Setup ----------------------------
 
-                userInput.ConsoleText("Select Difficulty: Easy (E), Medium (M), Hard (H) or Random (R)");
-                string difficultySelected = userInput.UpperUserInput();
+               t_Handler.ConsoleText("Select Difficulty: Easy (E), Medium (M), Hard (H) or Random (R)");
+                string difficultySelected = t_Handler.UpperUserInput();
 
+                //Word to guess
                 var newWord             = word_H.WordGenerator(difficultySelected);
-                var wordToBeGuessedList = word_H.AddingGuessToList(newWord);
-                word_H.PrintingLetterOrUnderscoreToConsole(wordToBeGuessedList);
+
+                //Word seperated into char's and stored in list
+                var wordToBeGuessedList = word_H.CharListForWord(newWord);
+                wGuess_H.PrintingLetterOrUnderscoreToConsole(wordToBeGuessedList);
 
                 //------------------------------------------------
 
                 Console.Clear();
 
 
-                while (Lives != 0)
+                //Game Rules
+                while (Lives != 0 | gameWon == false)
                 {
 
-                    life_H.HangmanDraw(Lives);
-                    word_H.PrintingLetterOrUnderscoreToConsole(wordToBeGuessedList);
 
+                    //Console Display
+                    life_H.HangmanDraw(Lives);
+
+                    if(userGuessedList.Count != 0)
+                    {
+                        t_Handler.BlankLine();
+                        t_Handler.DisplayCharList(userGuessedList);
+                    }
+
+                    t_Handler.BlankLine();
+
+                    //displays guess List either underscore or letter
+                    t_Handler.DisplayCharList(guessList);
+
+
+
+                    wGuess_H.PrintingLetterOrUnderscoreToConsole(wordToBeGuessedList);
+
+                    //?
                     if (repeatGame == true)
                     {
                         break;
@@ -55,43 +88,58 @@ namespace Hangman
 
                     t_Handler.BlankLine();
                     t_Handler.BlankLine();
-                    wGuess_H.PrintGuessedLetters();
                     t_Handler.BlankLine();
+
+
+                    // User guesses ---------------------------------------------
                     t_Handler.ConsoleText("Guess the word:");
+                    var stringGuess = Console.ReadLine();
+                    var input = wGuess_H.WordOrLetterGuess(stringGuess);
 
-                    string userGuess = Console.ReadLine();
-
-
-                    var input = wGuess_H.WordOrLetterGuess(userGuess, newWord);
-                    if (input)
-                    {
-                        wGuess_H.CheckingLetterGuess(userGuess, wordToBeGuessedList);
-                    }
-                    else
-                    {
-                        var guess = wGuess_H.CheckingWordGuess(userGuess, newWord);
-                        if (guess)
+                    // If guess is a letter
+                        if (input)
                         {
-                            gameOutcome.GameWon();
+                             var letter = wGuess_H.ConvertToChar(stringGuess);
+                             var letterGuess = wGuess_H.CheckingLetterGuess(letter, wordToBeGuessedList);
+                                if (letterGuess)
+                                {    //Replace underscore with letter (M)
+                                    wGuess_H.AddToGuessList(letter, userGuessedList);
+
+                                    var match = gameOutcome.WordMatch(userGuessedList, newWord);
+                                    if (match)
+                                    {
+                                    gameOutcome.GameWon(gameWon);
+                                    }
+                                }
+                                else
+                                {
+                                    life_H.LoseALife(Lives);
+                                    wGuess_H.AddToGuessList(letter,userGuessedList);
+                                }
                         }
+
+                        // Guess is a Word
                         else
                         {
-                            life_H.LoseALife(Lives);
+                            var guess = wGuess_H.CheckingWordGuess(stringGuess, newWord);
+                                if (guess)
+                                {
+                                    gameOutcome.GameWon(gameWon);
+                                }
+                                else
+                                {
+                                    life_H.LoseALife(Lives);
+                                }
                         }
-                            
-                    }
-                    
 
                     Console.Clear();
                 }
 
-                gameOutcome.CheckIfUserPlaysAgain(Lives, newWord);
+                t_Handler.GameOverMessage(gameWon, newWord, life_H, Lives);
+                gameOutcome.CheckIfUserPlaysAgain(repeatGame);
             }
 
             while (repeatGame == true);
         }
-
-
-
-    }
+    } 
 }
